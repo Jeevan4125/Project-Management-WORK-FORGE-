@@ -1,0 +1,314 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====== BASE COLORS ====== */
+:root {
+  /* Default: Black & White */
+  --primary: #000000;
+  --primary-dark: #111827;
+  --secondary: #6b7280;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --light: #ffffff;
+  --dark: #000000;
+  --card-bg: #ffffff;
+  --sidebar-bg: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+}
+
+/* Slate Theme */
+[data-theme="slate"] {
+  --primary: #3f3f46;
+  --primary-dark: #18181b;
+  --secondary: #a1a1aa;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --light: #f4f4f5;
+  --dark: #09090b;
+  --card-bg: #18181b;
+  --sidebar-bg: #1f1f22;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+}
+
+/* Emerald Theme */
+[data-theme="emerald"] {
+  --primary: #047857;
+  --primary-dark: #064e3b;
+  --secondary: #6b7280;
+  --success: #10b981;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --light: #f0fdfa;
+  --dark: #000000;
+  --card-bg: #f0fdfa;
+  --sidebar-bg: #ecfdf5;
+  --text-primary: #064e3b;
+  --text-secondary: #374151;
+}
+
+/* Amber Theme */
+[data-theme="amber"] {
+  --primary: #b45309;
+  --primary-dark: #7c2d12;
+  --secondary: #78716c;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #dc2626;
+  --light: #fffbeb;
+  --dark: #000000;
+  --card-bg: #fffbeb;
+  --sidebar-bg: #fef3c7;
+  --text-primary: #7c2d12;
+  --text-secondary: #57534e;
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --card-bg: #111827;
+  --sidebar-bg: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+}
+
+/* ====== GLOBAL STYLES ====== */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ====== ANIMATIONS & TRANSITIONS ====== */
+button, a, input, select {
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover, a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ====== CUSTOM SCROLLBAR ====== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ====== TAILWIND EXTENSIONS ====== */
+@layer components {
+  .btn-primary {
+    @apply bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 font-medium rounded-lg px-4 py-2 shadow-sm hover:bg-gray-800 dark:hover:bg-gray-200;
+  }
+  .btn-outline {
+    @apply border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-lg px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700;
+  }
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-200 dark:border-gray-700;
+  }
+}@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====== BASE COLORS ====== */
+:root {
+  /* Default: Black & White */
+  --primary: #000000;
+  --primary-dark: #111827;
+  --secondary: #6b7280;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --light: #ffffff;
+  --dark: #000000;
+  --card-bg: #ffffff;
+  --sidebar-bg: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+}
+
+/* Slate Theme */
+[data-theme="slate"] {
+  --primary: #3f3f46;
+  --primary-dark: #18181b;
+  --secondary: #a1a1aa;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --light: #f4f4f5;
+  --dark: #09090b;
+  --card-bg: #18181b;
+  --sidebar-bg: #1f1f22;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+}
+
+/* Emerald Theme */
+[data-theme="emerald"] {
+  --primary: #047857;
+  --primary-dark: #064e3b;
+  --secondary: #6b7280;
+  --success: #10b981;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --light: #f0fdfa;
+  --dark: #000000;
+  --card-bg: #f0fdfa;
+  --sidebar-bg: #ecfdf5;
+  --text-primary: #064e3b;
+  --text-secondary: #374151;
+}
+
+/* Amber Theme */
+[data-theme="amber"] {
+  --primary: #b45309;
+  --primary-dark: #7c2d12;
+  --secondary: #78716c;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #dc2626;
+  --light: #fffbeb;
+  --dark: #000000;
+  --card-bg: #fffbeb;
+  --sidebar-bg: #fef3c7;
+  --text-primary: #7c2d12;
+  --text-secondary: #57534e;
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --card-bg: #111827;
+  --sidebar-bg: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+}
+
+/* ====== GLOBAL STYLES ====== */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ====== ANIMATIONS & TRANSITIONS ====== */
+button, a, input, select {
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover, a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ====== CUSTOM SCROLLBAR ====== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ====== TAILWIND EXTENSIONS ====== */
+@layer components {
+  .btn-primary {
+    @apply bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 font-medium rounded-lg px-4 py-2 shadow-sm hover:bg-gray-800 dark:hover:bg-gray-200;
+  }
+  .btn-outline {
+    @apply border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-lg px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700;
+  }
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-200 dark:border-gray-700;
+  }
+}
+/* Add to your index.css or App.css */
+.recharts-wrapper {
+  position: relative;
+}
+
+.recharts-surface {
+  overflow: visible;
+}
+
+.recharts-responsive-container {
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
