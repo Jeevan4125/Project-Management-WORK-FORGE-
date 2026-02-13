@@ -52,7 +52,6 @@ Project-Management-WORK-FORGE-
 ├── vite.config.js         # Vite configuration
 ├── tailwind.config.js     # Tailwind CSS configuration
 ├── postcss.config.js      # PostCSS configuration
-├── z.jsx / k.js           # JS / JSX logic files
 └── Project Work Forge user manual.docx  # User manual
 ```
 
